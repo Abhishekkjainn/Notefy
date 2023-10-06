@@ -70,6 +70,6 @@ function todeletemain(e) {
       }
     }
   } else {
-    alert('User Didnt Confirm');
+    alert('User Didnt Confirm to delete');
   }
 }
