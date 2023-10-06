@@ -1,0 +1,123 @@
+body{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+    font-family: 'Poppins';
+}
+::-webkit-scrollbar{
+    width: 3px;
+    background-color: transparent;
+}
+::-webkit-scrollbar-thumb{
+    background: grey;
+    border-radius: 40px;
+}
+.sidebar{
+    position: fixed;
+    top: 2%;
+    bottom: 2%;
+    left: 1%;
+    height: 95%;
+    width: 20%;
+    background-color: rgb(219, 219, 219);
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.mainbar{
+    height: 95%;
+    width: 76%;
+    background-color: #0047AB;
+    position: fixed;
+    right: 1.5%;
+    top: 2%;
+    bottom: 2%;
+    border-radius: 30px;
+    display: flex;
+    overflow-y: scroll;  
+    flex-wrap: wrap;
+}
+/*sidebar styling*/
+.notesappintro{
+    width: 90%;
+    height: 15%;
+    background-color: #0047AB;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+.introtext{
+    font-size: 30px;
+    margin-left:20px ;
+    font-weight: 500;
+}
+.utilitydiv{
+    width: 90%;
+    background-color: #ffffff;
+    height:65%;
+    margin-top: 0px;
+    border-radius: 20px;
+    transform: translateY(-10px);
+    display: flex;
+    justify-content: start;align-items: start;
+    overflow-y: scroll;
+    flex-wrap: wrap;
+}
+.createbutton{
+    width: 92%;
+    height: 80px;
+    display: flex;justify-content: space-around;align-items: center;
+    font-size: 1rem;
+    border: none;
+    border-radius: 20px;
+    background-color: rgb(101, 202, 101);
+    color: white;
+    font-weight: 600;
+    margin-top: 15px;
+    margin-bottom: 25px;
+}
+.notehead{
+    width: 92%;
+    height: 150px;
+    background-color: #e3e3e3;
+    margin-top: 15px;
+    border-radius: 20px;
+    border: 1px solid #0047AB;
+    margin-left: 10px;
+}
+
+/*mainbar Styling*/
+.createbuttonmain{
+    width: 31%;
+    height: 250px;
+    border-radius: 30px;
+    background-color: rgba(255, 255, 255, 0.336);
+    border: none;
+    display: flex; justify-content: center;align-items: center;
+    flex-direction: column;
+    font-size: 1.5rem;
+    color: white;
+    font-weight: 600;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.mainpagecreateimage{
+    margin-bottom: 20px;
+}
+
+.notesdiv{
+    width: 31%;
+    height: 250px;
+    background-color: white;
+    margin-top: 20px;
+    margin-left: 20px;
+    border-radius: 20px;
+    
+}

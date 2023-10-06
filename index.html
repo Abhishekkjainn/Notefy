@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notefy | Write your Heart out.</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="post-it.png" type="image/x-icon" />
+  </head>
+  <body>
+    <!--SideBar-->
+    <div class="sidebar">
+      <div class="notesappintro">
+        <img src="post-it.png" alt="Notefy" width="60px" class="introimage" />
+        <p class="introtext">Notefy</p>
+      </div>
+      <button type="button" class="createbutton" onclick="createnote()">
+        <img src="plus.png" alt="" width="50px" /> Create New Note
+      </button>
+      <div class="utilitydiv" id="utilitydiv"></div>
+    </div>
+    <!--Sidebar over-->
+    <!--mainbar-->
+    <div class="mainbar" id="mainbar">
+      <button class="createbuttonmain" onclick="createnote()">
+        <img src="plus.png" alt="" width="80px" class="mainpagecreateimage" />
+        Create A New Note
+      </button>
+    </div>
+    <!--mainbar ends-->
+
+    <script src="script.js"></script>
+  </body>
+</html>
