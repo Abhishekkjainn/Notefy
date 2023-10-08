@@ -14,7 +14,7 @@
         <img src="post-it.png" alt="Notefy" width="60px" class="introimage" />
         <p class="introtext">Notefy</p>
       </div>
-      <button type="button" class="createbutton" onclick="createnote()">
+      <button type="button" class="createbutton" onclick="addtaskpop()">
         <img src="plus.png" alt="" width="50px" /> Create New Note
       </button>
       <div class="utilitydiv" id="utilitydiv">
@@ -37,7 +37,7 @@
     <!--Sidebar over-->
     <!--mainbar-->
     <div class="mainbar" id="mainbar">
-      <button class="createbuttonmain" onclick="createnote()">
+      <button class="createbuttonmain" onclick="addtaskpop()">
         <img src="plus.png" alt="" width="80px" class="mainpagecreateimage" />
         Create A New Note
       </button>
@@ -65,6 +65,72 @@
       </div> -->
     </div>
     <!--mainbar ends-->
+
+    <!--Add Task Popup-->
+    <div class="addtaskpopupdiv" id="addtaskpopupdiv">
+      <div class="taskpopup" id="addtaskpop">
+        <div class="topbar">
+          <button
+            type="button"
+            class="closebutton"
+            onclick="addtaskpopclose()"
+          ></button>
+        </div>
+        <div class="middlesection">
+          <div class="titlepop">
+            <input
+              type="text"
+              class="titlepopinput"
+              placeholder="Title"
+              id="titlepop"
+            />
+          </div>
+          <div class="tagpop">
+            <div class="tagpopinsides">
+              <div
+                class="importanttagpop"
+                id="impbuttonpop"
+                onclick="impbuttoncolor()"
+              >
+                IMP
+              </div>
+              <div
+                class="pritagpop"
+                id="pributtonpop"
+                onclick="pributtoncolor()"
+              >
+                PRIMARY
+              </div>
+              <div
+                class="sectagpop"
+                id="secbuttonpop"
+                onclick="secbuttoncolor()"
+              >
+                SECONDARY
+              </div>
+            </div>
+          </div>
+          <div class="desctag">
+            <textarea
+              name="desc"
+              id="enterdescription"
+              cols="30"
+              rows="10"
+              class="maindescpop"
+            ></textarea>
+          </div>
+        </div>
+        <div class="submitsection">
+          <button
+            type="button"
+            class="popupcreatebutton"
+            onclick="createnote(), addtaskpopclose() "
+          >
+            Add Note
+          </button>
+        </div>
+      </div>
+    </div>
 
     <script src="script.js"></script>
   </body>

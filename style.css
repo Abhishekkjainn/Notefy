@@ -6,6 +6,9 @@ body{
     overflow-x: hidden;
     font-family: 'Poppins';
 }
+*:focus{
+    outline: 0;
+}
 ::-webkit-scrollbar{
     width: 3px;
     background-color: transparent;
@@ -27,6 +30,10 @@ body{
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+.createbuttonmain:hover{
+    background-color: rgba(255, 255, 255, 0.275);
+    transition: 0.4s;
 }
 .mainbar{
     height: 95%;
@@ -82,6 +89,10 @@ body{
     margin-top: 15px;
     margin-bottom: 25px;
 }
+.createbutton:hover{
+    background-color: rgb(115, 239, 115);
+    transition: 0.3s;
+}
 .notehead{
     display: flex;
     justify-content: center;
@@ -101,7 +112,7 @@ body{
     width: 31%;
     height: 250px;
     border-radius: 30px;
-    background-color: rgba(255, 255, 255, 0.336);
+    background-color: rgba(255, 255, 255, 0.136);
     border: none;
     display: flex; justify-content: center;align-items: center;
     flex-direction: column;
@@ -155,15 +166,16 @@ body{
     justify-content: center;
     align-items: center;
     font-size: x-small;
-    color: red;
+    color: rgb(56, 56, 56);
     font-weight: 600;
 }
 .secondsection{
     width: 95%;
-    height: 60%;
+    height: 57%;
+    padding-top: 3%;
     border: 1px solid grey;
     display: flex;
-    justify-content: center;align-items: center;
+    justify-content: center;align-items: flex-start;
     border-radius: 10px;
 }
 .textsection{
@@ -215,3 +227,180 @@ body{
 .tagside{
     scale: 0.8;
 }
+
+/*Popup*/
+.addtaskpopupdiv{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    background-color: #000000a0;
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    display: none;
+}
+.taskpopup{
+    width: 50%;
+    height: 75%;
+    background-color: white;
+    border-radius: 40px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    scale: 0;
+    display: flex;
+    justify-content: center;align-items: center;
+    flex-direction: column;
+}
+.closebutton{
+    width: 25px;
+    height: 25px;
+    border: none;
+    border-radius: 50%;
+    background-color: red;
+    transform: translateY(10px);
+}
+.topbar{
+    width: 90%;
+    height: 7%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.middlesection{
+    width:95%;
+    height:75%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.submitsection{
+    width: 95%;
+    height: 15%;
+    display: flex;
+    justify-content: center;align-items: center;
+}
+.popupcreatebutton{
+    width: 180px;
+    height: 60px;
+    border: none;
+    border-radius: 10px;
+    background-color: #0047AB;
+    color: white;
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+/*Middle section codes*/
+.titlepop,.tagpop,.desctag{
+    display: flex;
+    justify-content: center;align-items: center;
+    flex-direction: column;
+}
+.titlepop{
+    width: 95%;
+    height: 20%;
+    
+}
+.tagpop{
+    width: 95%;
+    height: 15%;
+    
+    display: flex;
+    justify-content: center;align-items: center;
+}
+.desctag{
+    width: 95%;
+    height: 60%;
+}
+/*title input tag popup addtask*/
+.titlepopinput{
+    width: 99%;
+    height: 90%;
+    border: none;
+    background-color: transparent;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: rgb(79, 79, 79);
+}
+.titlepopinput::placeholder{
+    font-weight: 700;
+}
+
+/*Tag section design*/
+.tagpopinsides{
+    width: 99%;
+    height: 95%;
+    display: flex;
+    justify-content: flex-start;align-items: center;
+}
+.importanttagpop{
+    width: 100px;
+    height: 30px;
+    background-color: transparent;
+    border: 2px solid red;
+    border-radius: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: small;
+    color: red;
+    font-weight: 600;
+    margin-right: 10px;
+    cursor: pointer;
+}
+.importanttagpop:hover{
+    background-color: red;
+    color: white;
+    transition: 0.3s;
+}
+.pritagpop{
+    width: 100px;
+    height: 30px;
+    background-color: transparent;
+    border: 2px solid rgb(0, 135, 193);
+    border-radius: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: small;
+    color: rgb(0, 135, 193);
+    font-weight: 600;
+    margin-right: 10px;
+    cursor: pointer;
+}
+.pritagpop:hover{
+    background-color:rgb(0, 135, 193) ;
+    color: white;
+    transition: 0.3s;
+}
+.sectagpop{
+    width: 100px;
+    height: 30px;
+    background-color: transparent;
+    border: 2px solid rgb(4, 133, 54);
+    border-radius: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: small;
+    color: rgb(4, 133, 54);
+    font-weight: 600;
+    cursor: pointer;
+}
+.sectagpop:hover{
+    background-color: rgb(4, 133, 54);
+    color: white;
+    transition: 0.3s;
+}
+.maindescpop{
+    width: 95%;
+    height: 95%;
+    padding: 2.5%;
+    border: none;
+    border-radius: 20px;
+    background-color: rgb(233, 233, 233);
+    resize: none;
+    font-size: 1.3rem;
+}
+
+

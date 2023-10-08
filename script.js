@@ -1,5 +1,21 @@
 let idcounter = 1;
 function createnote() {
+  let titlepop = document.getElementById('titlepop').value;
+  let tagpop2 = localStorage.getItem('tagpop');
+  // let tagpop;
+  // if (tagpop2 == 'IMP') {
+  //   tagpop = 'IMP';
+  //   tag.style.border = '2px solid red';
+  // } else if (tagpop2 == 'PRIMARY') {
+  //   tagpop = 'PRI';
+  //   tag.style.border = '2px solid rgb(0, 135, 193)';
+  // } else if (tagpop2 == 'SECONDARY') {
+  //   tagpop = 'SEC';
+  //   tag.style.border = '2px solid rgb(4, 133, 54)';
+  // }
+
+  let descpop = document.getElementById('enterdescription').value;
+
   let mainparentdiv = document.getElementById('mainbar');
   let newmainnote = document.createElement('div');
   newmainnote.classList.add('notesdiv');
@@ -21,11 +37,21 @@ function createnote() {
 
   let titlenotesmain = document.createElement('div');
   titlenotesmain.className = 'titlenotesmain';
-  titlenotesmain.innerText = `This is my ${idcounter} note`;
-
+  titlenotesmain.innerText = titlepop;
   let tag = document.createElement('div');
+  let tagpop;
+  if (tagpop2 == 'IMP') {
+    tagpop = 'IMP';
+    tag.style.border = '2px solid red';
+  } else if (tagpop2 == 'PRIMARY') {
+    tagpop = 'PRI';
+    tag.style.border = '2px solid rgb(0, 135, 193)';
+  } else if (tagpop2 == 'SECONDARY') {
+    tagpop = 'SEC';
+    tag.style.border = '2px solid rgb(4, 133, 54)';
+  }
   tag.className = 'tag';
-  tag.innerText = 'IMP';
+  tag.innerText = tagpop;
 
   firstsection.appendChild(titlenotesmain);
   firstsection.appendChild(tag);
@@ -34,8 +60,7 @@ function createnote() {
 
   let textsection = document.createElement('div');
   textsection.className = 'textsection';
-  textsection.innerText =
-    'This is Abhshek jain This is Abhshek jainThis is Abhshek jainThis is Abhshek jainThis is Abhshek jainThis is Abhshek jainThis is Abhshek jainThis is Abhshek jainThis is Abhshek jainThis is Abhshek jainThis is Abhshek jainThis is Abhshek jainThis is Abhshek jainThis is Abhshek jain ';
+  textsection.innerText = descpop;
 
   secondsection.appendChild(textsection);
 
@@ -100,11 +125,11 @@ function createnote() {
 
   let titleside = document.createElement('div');
   titleside.className = 'titleside';
-  titleside.innerText = `This is ${idcounter} Note`;
+  titleside.innerText = titlepop;
 
   let tagside = document.createElement('div');
   tagside.className = 'tagside';
-  tagside.innerText = 'IMP';
+  tagside.innerText = tagpop;
   tagside.classList.add('tag');
 
   firstsidesection.appendChild(titleside);
@@ -114,9 +139,7 @@ function createnote() {
 
   let textsidesection = document.createElement('div');
   textsidesection.className = 'textsidesection';
-  textsidesection.innerText =
-    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum molestiae non consectetur, voluptas nemo quo sequi, commodi quidem ipsum nam dolor recusandae? Ut eius nobis obcaecati, eaque dolorum autem quod';
-
+  textsidesection.innerText = descpop;
   secondsidesection.appendChild(textsidesection);
 
   newnote.appendChild(firstsidesection);
@@ -181,3 +204,76 @@ function todeletemain(e) {
     alert('User Didnt Confirm to delete');
   }
 }
+
+function addtaskpop() {
+  let popmaindiv = document.getElementById('addtaskpopupdiv');
+  let addtaskpop = document.getElementById('addtaskpop');
+  let titlepop = (document.getElementById('titlepop').value = '');
+
+  let descpop = (document.getElementById('enterdescription').value = '');
+  popmaindiv.style.display = 'flex';
+  popmaindiv.style.transition = 'all 0.8s';
+  addtaskpop.style.scale = '1';
+  addtaskpop.style.transition = 'all 1s';
+}
+function addtaskpopclose() {
+  let popmaindiv = document.getElementById('addtaskpopupdiv');
+  let addtaskpop = document.getElementById('addtaskpop');
+  popmaindiv.style.display = 'none';
+  popmaindiv.style.transition = 'all 0.8s';
+  addtaskpop.style.scale = '0';
+  addtaskpop.style.transition = 'all 1s';
+}
+
+//tag onclick color changes
+let tagcolorcounter = 0;
+
+function impbuttoncolor() {
+  if (tagcolorcounter % 2 == 0) {
+    let impbutton = document.getElementById('impbuttonpop');
+    impbutton.style.backgroundColor = 'red';
+    impbutton.style.color = 'white';
+    tagcolorcounter++;
+    localStorage.setItem('tagpop', impbutton.innerText);
+  } else if (tagcolorcounter % 2 != 0) {
+    let impbutton = document.getElementById('impbuttonpop');
+    impbutton.style.backgroundColor = 'transparent';
+    impbutton.style.color = 'red';
+    tagcolorcounter++;
+    localStorage.removeItem('tagpop', impbutton.innerText);
+  }
+}
+
+function pributtoncolor() {
+  if (tagcolorcounter % 2 == 0) {
+    let impbutton = document.getElementById('pributtonpop');
+    impbutton.style.backgroundColor = 'rgb(0, 135, 193)';
+    impbutton.style.color = 'white';
+    tagcolorcounter++;
+    localStorage.setItem('tagpop', impbutton.innerText);
+  } else if (tagcolorcounter % 2 != 0) {
+    let impbutton = document.getElementById('pributtonpop');
+    impbutton.style.backgroundColor = 'transparent';
+    impbutton.style.color = 'rgb(0, 135, 193)';
+    tagcolorcounter++;
+    localStorage.removeItem('tagpop', impbutton.innerText);
+  }
+}
+
+function secbuttoncolor() {
+  if (tagcolorcounter % 2 == 0) {
+    let impbutton = document.getElementById('secbuttonpop');
+    impbutton.style.backgroundColor = 'rgb(4, 133, 54)';
+    impbutton.style.color = 'white';
+    tagcolorcounter++;
+    localStorage.setItem('tagpop', impbutton.innerText);
+  } else if (tagcolorcounter % 2 != 0) {
+    let impbutton = document.getElementById('secbuttonpop');
+    impbutton.style.backgroundColor = 'transparent';
+    impbutton.style.color = 'rgb(4, 133, 54)';
+    tagcolorcounter++;
+    localStorage.removeItem('tagpop', impbutton.innerText);
+  }
+}
+
+function extractalltheinfoformpopup() {}
